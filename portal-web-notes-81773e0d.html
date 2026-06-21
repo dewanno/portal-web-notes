@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再访 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f4f6;
+            color: #2a2e35;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fffffffc;
+            border-radius: 28px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.6rem 2.2rem;
+            border: 1px solid #eaeef2;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 2.5rem;
+            border-bottom: 1px dashed #dce2e8;
+            padding-bottom: 1.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1d232b;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 small {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #5f6b7a;
+            margin-left: 0.6rem;
+        }
+
+        .hero .opening {
+            font-size: 1.2rem;
+            background: #f0f3f7;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            color: #2f3a46;
+            margin-top: 0.3rem;
+            border: 1px solid #e2e8ee;
+        }
+
+        /* 承接段落 */
+        .story-note {
+            background: #f7f9fc;
+            padding: 1.4rem 1.8rem;
+            border-radius: 20px;
+            margin: 1.8rem 0;
+            border-left: 4px solid #6f8a9c;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .story-note p {
+            margin-bottom: 0.8rem;
+        }
+
+        .story-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-note a {
+            color: #1f5b7a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            font-weight: 500;
+        }
+
+        .story-note a:hover {
+            background: #dce6ed;
+            text-decoration: underline;
+        }
+
+        /* 特点卡片区 */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 2.2rem 0;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid #e3e9ef;
+            border-radius: 20px;
+            padding: 1.2rem 1.4rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: #bcc9d6;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1e2b38;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-card h3::before {
+            content: "▹";
+            color: #5f7d94;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #3b4654;
+            margin-bottom: 0;
+        }
+
+        /* 场景段落 */
+        .scene-block {
+            background: #f4f7fa;
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0 1.6rem;
+            border: 1px solid #dee5ec;
+        }
+
+        .scene-block h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #1b2937;
+            margin-bottom: 0.8rem;
+        }
+
+        .scene-block p {
+            margin-bottom: 0.6rem;
+        }
+
+        .scene-block a {
+            color: #1d5b7a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .scene-block a:hover {
+            background: #d2dce6;
+        }
+
+        /* 提示 / FAQ 摘要 */
+        .tip-area {
+            margin: 2rem 0 1.2rem;
+            padding: 1.2rem 1.6rem;
+            background: #f7f9fb;
+            border-radius: 20px;
+            border: 1px solid #e2e9f0;
+        }
+
+        .tip-area h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1e2b38;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-area ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tip-area li {
+            padding: 0.4rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            color: #2b3847;
+            font-size: 0.95rem;
+        }
+
+        .tip-area li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #6f8a9c;
+            font-weight: 700;
+        }
+
+        .tip-area a {
+            color: #1b5d7c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .tip-area a:hover {
+            background: #dee7ef;
+        }
+
+        /* 温和结尾 */
+        .gentle-footer {
+            margin-top: 2.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e0e6ed;
+            text-align: left;
+            font-size: 0.95rem;
+            color: #3e4b5a;
+        }
+
+        .gentle-footer p {
+            margin-bottom: 0.6rem;
+        }
+
+        .gentle-footer a {
+            color: #1b5b7a;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .gentle-footer a:hover {
+            background: #dae3ec;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero .opening {
+                font-size: 1rem;
+                padding: 0.2rem 1rem;
+            }
+
+            .story-note {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+
+            .page {
+                padding: 1rem 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- hero 开场短句 -->
+    <div class="hero">
+        <h1>
+            又见面了
+            <small>—— 你收藏的角落</small>
+        </h1>
+        <div class="opening">故事仍在继续 · 爱游戏</div>
+    </div>
+
+    <!-- 承接段落: 关于再次访问与收藏 -->
+    <div class="story-note">
+        <p>
+            有些页面你只打开一次，但有些地方你隔段时间就想回来看看。<a href="https://portal-web-i-game.com.cn">爱游戏</a> 
+            就是这样一个存在——它不喧哗，不催促，只是安静地待在你的书签栏里，等你哪天心血来潮再次点开。
+        </p>
+        <p>
+            也许你上次来是某个周末的午后，也许只是随手划过。这次再访问时，发现界面依旧熟悉，但内容似乎又添了些新东西。这种“收藏的默契”，大概就是好网站的样子。
+        </p>
+    </div>
+
+    <!-- 特点列表: 卡片 -->
+    <div class="features">
+        <div class="feature-card">
+            <h3>收藏即重逢</h3>
+            <p>书签不只是链接，更像一个标记——提醒自己：这里值得再停留。每次打开都像和老朋友打招呼。</p>
+        </div>
+        <div class="feature-card">
+            <h3>持续更新的角落</h3>
+            <p>内容在慢慢生长，没有突然的轰炸，只有细水长流的补充。你隔一阵来看，总能发现一点新意。</p>
+        </div>
+        <div class="feature-card">
+            <h3>不打扰的陪伴</h3>
+            <p>没有弹窗，没有强制推送。你来，它就在；你忙，它安静等着。这大概是最舒服的访问节奏。</p>
+        </div>
+        <div class="feature-card">
+            <h3>轻巧又干净</h3>
+            <p>页面加载快，结构清晰。在如今各种臃肿的网页里，这样的简洁反而成了难得的体贴。</p>
+        </div>
+    </div>
+
+    <!-- 场景段落 -->
+    <div class="scene-block">
+        <h2>某个下午，你又想起了它</h2>
+        <p>
+            也许是通勤路上，或是睡前的几分钟。你从收藏夹里翻出<a href="https://portal-web-i-game.com.cn">爱游戏</a>，
+            发现上次看的那个栏目又更新了几条。没有红点提示，没有未读数字，就是安安静静地多了一些内容。
+        </p>
+        <p>
+            你随手往下翻，看到之前没注意到的细节，忍不住又 bookmark 了一次——怕自己下次找不着。这种“主动回来”的感觉，比任何推送都真实。
+        </p>
+    </div>
+
+    <!-- 提示/FAQ 摘要 风格 -->
+    <div class="tip-area">
+        <h3>关于「再次回来」你可能想问的</h3>
+        <ul>
+            <li>页面会不定期补充新内容，但不会改变整体风格，放心收藏。</li>
+            <li>如果你已经很久没来，直接从收藏夹点开即可，无需重新登录或关注。</li>
+            <li>想保持联系？你不需要做任何操作——只要把 <a href="https://portal-web-i-game.com.cn">爱游戏</a> 放在书签里，随时都能回来。</li>
+            <li>没有任何邮件订阅，没有隐藏条款。这里只是一个你愿意回访的小站。</li>
+        </ul>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-footer">
+        <p>下一次打开，也许是明天，也许是下个月。没关系，<a href="https://portal-web-i-game.com.cn">爱游戏</a> 会一直在收藏夹里等你。</p>
+        <p style="margin-top:0.3rem; font-size:0.88rem; color:#5b6b7c;">—— 不打扰，就是最好的陪伴。</p>
+    </div>
+
+</div>
+
+</body>
+</html>
