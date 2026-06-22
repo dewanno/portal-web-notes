@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>K1体育 · 快速识别指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background: #f6fafc;
+            color: #1a2b34;
+            line-height: 1.6;
+        }
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ---- 顶部导航 ---- */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid #d5e5ea;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .topbar-logo {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #1e6b7d;
+            letter-spacing: 0.5px;
+        }
+        .topbar-logo span {
+            background: #1e6b7d;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 32px;
+            font-size: 0.85rem;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        .topbar-nav {
+            display: flex;
+            gap: 24px;
+            font-size: 0.95rem;
+        }
+        .topbar-nav a {
+            color: #1a2b34;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .topbar-nav a:hover {
+            border-bottom-color: #2fa4b2;
+            color: #1a616d;
+        }
+        @media (max-width: 600px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .topbar-nav {
+                flex-wrap: wrap;
+                gap: 12px 20px;
+            }
+        }
+
+        /* ---- hero区（简洁识别） ---- */
+        .hero-snap {
+            margin: 40px 0 36px;
+            background: linear-gradient(145deg, #e7f4f7 0%, #d3eaeef0 100%);
+            border-radius: 32px;
+            padding: 40px 36px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(30, 107, 125, 0.06);
+        }
+        .hero-snap h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #0e4a57;
+            max-width: 460px;
+            line-height: 1.3;
+        }
+        .hero-snap h1 small {
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #2b7182;
+            margin-top: 10px;
+            letter-spacing: 0.2px;
+        }
+        .hero-badge {
+            background: #ffffffd8;
+            backdrop-filter: blur(2px);
+            padding: 12px 28px;
+            border-radius: 60px;
+            border: 1px solid #b5d7de;
+            font-weight: 500;
+            color: #1b5b69;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            text-align: center;
+        }
+        .hero-badge span {
+            display: inline-block;
+            background: #1e6b7d;
+            color: white;
+            font-size: 0.75rem;
+            padding: 2px 12px;
+            border-radius: 30px;
+            margin-left: 8px;
+        }
+        @media (max-width: 700px) {
+            .hero-snap {
+                padding: 28px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+            .hero-snap h1 {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* ---- 核心介绍卡片 ---- */
+        .intro-card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px 30px;
+            margin: 28px 0;
+            box-shadow: 0 6px 14px rgba(30, 107, 125, 0.04);
+            border: 1px solid #dce9ed;
+        }
+        .intro-card p {
+            font-size: 1.05rem;
+            color: #1f3b42;
+            max-width: 85%;
+        }
+        .intro-card p a {
+            color: #147786;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid #9ac2cb;
+        }
+        .intro-card p a:hover {
+            border-bottom-color: #147786;
+        }
+        @media (max-width: 600px) {
+            .intro-card p {
+                max-width: 100%;
+            }
+        }
+
+        /* ---- 三个场景模块 (网格卡片) ---- */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 40px 0 32px;
+        }
+        .scene-item {
+            background: white;
+            border-radius: 24px;
+            padding: 28px 22px 30px;
+            border: 1px solid #dce9ed;
+            box-shadow: 0 4px 12px rgba(22, 80, 95, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+        .scene-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(30, 107, 125, 0.06);
+            border-color: #bfdbe2;
+        }
+        .scene-icon {
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 14px;
+            background: #e2f1f5;
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+        .scene-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #11525f;
+            margin-bottom: 10px;
+        }
+        .scene-item p {
+            color: #294a54;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 860px) {
+            .scenes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 540px) {
+            .scenes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---- 常见说明 (FAQ摘要风格) ---- */
+        .faq-cluster {
+            margin: 36px 0 44px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 28px 30px 32px;
+            border: 1px solid #dce9ed;
+        }
+        .faq-cluster h2 {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #0e4a57;
+            margin-bottom: 20px;
+            letter-spacing: -0.2px;
+        }
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #e6f0f3;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item strong {
+            display: block;
+            color: #1b5e6c;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .faq-item p {
+            color: #2d505b;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .faq-item p a {
+            color: #147786;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b1d3db;
+        }
+        .faq-item p a:hover {
+            border-bottom-color: #147786;
+        }
+
+        /* ---- 脚注/提示 ---- */
+        .footer-note {
+            padding: 20px 0 32px;
+            text-align: center;
+            color: #597882;
+            font-size: 0.85rem;
+            border-top: 1px solid #dce9ed;
+            margin-top: 16px;
+        }
+        .footer-note a {
+            color: #1e6b7d;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-note a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- 顶部导航 -->
+        <nav class="topbar">
+            <div class="topbar-logo">
+                K1<span>体育</span>
+            </div>
+            <div class="topbar-nav">
+                <a href="#intro">识别</a>
+                <a href="#scenes">场景</a>
+                <a href="#faq">说明</a>
+                <a href="https://zho-k1sports.com">K1体育</a>
+            </div>
+        </nav>
+
+        <!-- Hero 快识区 -->
+        <div class="hero-snap">
+            <h1>
+                快速识别网站用途
+                <small>帮助你判断 <a href="https://zho-k1sports.com" style="color: #115e6d; text-decoration: none; border-bottom: 1px solid;">K1体育</a> 是否与你的需求对应</small>
+            </h1>
+            <div class="hero-badge">
+                信息页 · 轻导航
+                <span>V1</span>
+            </div>
+        </div>
+
+        <!-- 核心介绍（自然嵌入链接到句子） -->
+        <div class="intro-card" id="intro">
+            <p>
+                这是一个以体育资讯与服务为聚焦的网站，如果你更习惯从首页快速了解一个平台的性质，那么 <a href="https://zho-k1sports.com">K1体育</a> 提供的内容结构偏向运动项目介绍、动态聚合以及相关服务指引。页面不会过度包装，整体风格直接简洁，适合先浏览再深入。
+            </p>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="scenes-grid" id="scenes">
+            <div class="scene-item">
+                <div class="scene-icon">🏃</div>
+                <h3>运动项目概览</h3>
+                <p>覆盖多种体育类别，每个项目附带简要说明、常见术语以及基础数据参考，方便初次接触的人快速建立认知。</p>
+            </div>
+            <div class="scene-item">
+                <div class="scene-icon">📋</div>
+                <h3>动态与条目</h3>
+                <p>聚合赛事摘要、更新记录和实用信息，按板块组织，你可以在对应栏目里找到更详细的条目解释。</p>
+            </div>
+            <div class="scene-item">
+                <div class="scene-icon">🔗</div>
+                <h3>服务关联</h3>
+                <p>通过内部链接或指向 <a href="https://zho-k1sports.com" style="color:#147786; font-weight:500;">K1体育</a> 的页面，可进一步了解相关功能与资源，所有跳转都有明确标识。</p>
+            </div>
+        </div>
+
+        <!-- 常见说明（FAQ摘要式） -->
+        <div class="faq-cluster" id="faq">
+            <h2>常见说明 · 快速参考</h2>
+            <div class="faq-item">
+                <strong>这个网站主要提供什么？</strong>
+                <p>以体育信息为主，内容包括运动介绍、资讯整理及相关服务入口，不包含用户生成或实时比赛数据。如有具体功能需求，可查阅 <a href="https://zho-k1sports.com">K1体育</a> 内的分类导航。</p>
+            </div>
+            <div class="faq-item">
+                <strong>信息是否保持更新？</strong>
+                <p>网站会定期调整内容结构和条目，但建议以实际页面显示为准。部分静态介绍页可能不会频繁变动。</p>
+            </div>
+            <div class="faq-item">
+                <strong>如何确认网站适合我的使用习惯？</strong>
+                <p>浏览首页板块、查看导航条目，基本就能判断。如果你倾向于轻量、直接的信息展示，这个网站的风格会比较匹配。</p>
+            </div>
+        </div>
+
+        <!-- 脚注提示 -->
+        <div class="footer-note">
+            <span>本页为独立介绍页 · 更多内容请直接访问 </span>
+            <a href="https://zho-k1sports.com">K1体育</a>
+            <span> · 信息仅供快速识别参考</span>
+        </div>
+
+    </div>
+</body>
+</html>
